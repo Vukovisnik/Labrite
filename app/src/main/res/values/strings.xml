@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Labrite</string>
+    <string name="game_title">Path Finding Puzzle</string>
+    <string name="level_text">Уровень: %d</string>
+    <string name="moves_text">Ходы: %d</string>
+    <string name="restart_button">Рестарт</string>
+    <string name="game_instructions">Проведите синий круг к красной цели за ограниченное количество ходов!</string>
+    <string name="swipe_instructions">Свайпните в нужном направлении для движения персонажа</string>
+    <string name="level_completed_title">Уровень пройден!</string>
+    <string name="level_completed_message">Поздравляем! Вы прошли уровень %d!</string>
+    <string name="next_level_button">Следующий уровень</string>
+    <string name="game_over_title">Игра окончена!</string>
+    <string name="game_over_message">У вас закончились ходы! Попробуйте еще раз.</string>
+    <string name="try_again_button">Попробовать снова</string>
+    <string name="exit_button">Выход</string>
+</resources>
