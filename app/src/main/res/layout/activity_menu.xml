@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="#1E1E1E"
     tools:context=".MainActivity">
 
     <!-- Заголовок игры -->
@@ -54,12 +53,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Кнопка "Настройки" -->
+    <!-- Кнопка "Выход" -->
     <Button
-        android:id="@+id/settingsButton"
+        android:id="@+id/exitButton"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Настройки"
+        android:text="Выход"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
@@ -78,87 +77,22 @@
         android:textSize="16sp"
         android:textColor="#4CAF50"
         android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/settingsButton"
+        app:layout_constraintTop_toBottomOf="@id/exitButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Верхняя панель с информацией -->
+    <!-- Инструкции -->
     <LinearLayout
-        android:id="@+id/topPanel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="#2D2D2D"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/levelText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Уровень: 1"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/highScoreText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Рекорд: 0"
-                android:textSize="12sp"
-                android:textColor="#4CAF50" />
-
-        </LinearLayout>
-
-    <TextView
-            android:id="@+id/movesText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Ходы: 10"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            android:gravity="center" />
-
-
-    </LinearLayout>
-
-    <!-- Игровое поле -->
-    <com.example.labrite.GameView
-        android:id="@+id/gameView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
-        android:background="#1E1E1E"
-        app:layout_constraintTop_toBottomOf="@id/topPanel"
-        app:layout_constraintBottom_toTopOf="@id/bottomPanel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Нижняя панель с инструкциями -->
-    <LinearLayout
-        android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#2D2D2D"
+        android:padding="32dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/instructionLine1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Проведите синий круг к красной цели"
@@ -168,7 +102,6 @@
             android:padding="4dp" />
 
         <TextView
-            android:id="@+id/instructionLine2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="за ограниченное количество ходов!"

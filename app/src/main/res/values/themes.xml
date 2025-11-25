@@ -6,4 +6,28 @@
     </style>
 
     <style name="Theme.Labrite" parent="Base.Theme.Labrite" />
+    
+    <!-- Темная тема -->
+    <style name="Theme.Labrite_Dark" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">#1E1E1E</item>
+        <item name="colorPrimary">#4CAF50</item>
+        <item name="colorPrimaryVariant">#45A049</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#81C784</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#81C784</item>
+    </style>
+    
+    <!-- Светлая тема -->
+    <style name="Theme.Labrite_Light" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">#F5F5F5</item>
+        <item name="colorPrimary">#2E7D32</item>
+        <item name="colorPrimaryVariant">#1B5E20</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#4CAF50</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="android:textColorPrimary">#212121</item>
+        <item name="android:textColorSecondary">#4CAF50</item>
+    </style>
 </resources>

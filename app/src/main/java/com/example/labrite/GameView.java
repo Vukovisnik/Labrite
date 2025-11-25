@@ -27,6 +27,7 @@ public class GameView extends View {
     private int cellSize;
     private int gridWidth = 10;
     private int gridHeight = 10;
+    private boolean isDarkTheme = true;
     private Point playerPos;
     private Point targetPos;
     private boolean[][] walls;
@@ -83,8 +84,12 @@ public class GameView extends View {
     
     private void init() {
         Log.d("PFPUZ", "GameView.init");
+        
+        // Проверяем тему
+        isDarkTheme = SettingsActivity.isDarkTheme(getContext());
+        
         wallPaint = new Paint();
-        wallPaint.setColor(Color.parseColor("#0F0F10")); // темнее стены
+        wallPaint.setColor(isDarkTheme ? Color.parseColor("#0F0F10") : Color.parseColor("#BDBDBD"));
         wallPaint.setStyle(Paint.Style.FILL);
         
         playerPaint = new Paint();
@@ -98,13 +103,14 @@ public class GameView extends View {
         targetPaint.setAntiAlias(true);
         
         pathPaint = new Paint();
-        pathPaint.setColor(Color.parseColor("#2F3240")); // светлее путь для контраста
+        pathPaint.setColor(isDarkTheme ? Color.parseColor("#2F3240") : Color.parseColor("#E8F5E8"));
         pathPaint.setStyle(Paint.Style.FILL);
         
         borderPaint = new Paint();
-        borderPaint.setColor(Color.parseColor("#2A2E3A")); // менее заметная сетка
+        borderPaint.setColor(isDarkTheme ? Color.parseColor("#2A2E3A") : Color.parseColor("#C8E6C9"));
         borderPaint.setStyle(Paint.Style.STROKE);
         borderPaint.setStrokeWidth(1);
+        setBackgroundColor(isDarkTheme ? Color.parseColor("#1E1E1E") : Color.parseColor("#FFFFFF"));
         
         walls = new boolean[gridHeight][gridWidth];
         playerPos = new Point(1, 1);
@@ -632,5 +638,19 @@ public class GameView extends View {
     
     public void setGameListener(GameListener listener) {
         this.gameListener = listener;
+    }
+    
+    public void updateTheme() {
+        // Обновляем тему и перерисовываем
+        isDarkTheme = SettingsActivity.isDarkTheme(getContext());
+        
+        // Обновляем цвета
+        wallPaint.setColor(isDarkTheme ? Color.parseColor("#0F0F10") : Color.parseColor("#BDBDBD"));
+        pathPaint.setColor(isDarkTheme ? Color.parseColor("#2F3240") : Color.parseColor("#E8F5E8"));
+        borderPaint.setColor(isDarkTheme ? Color.parseColor("#2A2E3A") : Color.parseColor("#C8E6C9"));
+        setBackgroundColor(isDarkTheme ? Color.parseColor("#1E1E1E") : Color.parseColor("#FFFFFF"));
+        
+        // Перерисовываем
+        invalidate();
     }
 }
